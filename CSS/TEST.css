@@ -1,0 +1,18 @@
+
+td h1 {
+    text-align: center;
+}
+td{
+    border: thin solid black;
+}
+
+table {
+    background-color: blue;
+
+}
+
+tr {
+    border: black;
+    margin: 100px;
+}
+
