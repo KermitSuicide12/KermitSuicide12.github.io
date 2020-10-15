@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="CSS/Main.css">
+	<script src="Scripts/Table.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Cloud Computing & Mobile App Development</h1>
+    </div>
+
+    <div class="topnav">
+		<a href="Main.html">Home</a>
+        <a href="Calender.html">Calender</a>
+        <a href="ITSystems.html">IT Systems</a>
+    </div>
+	
+	 <div class="row">
+        <div class="leftcolumn">
+			<div class="card">
+                
+            </div>
+			
+            <div class="card">
+                <h1 style="text-align:center">Calender</h1>
+				<input type="text" id="tableInput" onkeyup="tableFilter()" placeholder="Search Date" title="Type in a name">
+    			<table id="tanks"></table>
+            </div>
+        </div>
+		
+        <div class="rightcolumn">
+            <div class="card">
+                
+                
+                
+            </div>
+        </div>
+	</div>
+	
+    <script>
+        function tableFilter() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("tableInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tanks");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+
+        let tanks = [
+            {Term: "", Week: "1", Commencing: "7th September", Monday: "", Tuesday: ""},
+            {Term: "", Week: "2", Commencing: "14th September", Monday: "", Tuesday: ""},
+			{Term: "", Week: "3", Commencing: "21st September", Monday: "", Tuesday: ""},
+			{Term: "", Week: "4", Commencing: "28th September", Monday: "", Tuesday: ""},
+            {Term: "", Week: "5", Commencing: "5th October", Monday: "", Tuesday: ""},
+			{Term: "", Week: "6", Commencing: "12th October", Monday: "", Tuesday: ""},
+			{Term: "", Week: "7", Commencing: "19th October", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Autumn", Week: "", Commencing: "26th October", Monday: "Half term", Tuesday: ""},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "", Week: "8", Commencing: "2nd November", Monday: "B", Tuesday: "A"},
+            {Term: "", Week: "9", Commencing: "9th November", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "10", Commencing: "16th November", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "11", Commencing: "23th November", Monday: "A", Tuesday: "B"},
+            {Term: "", Week: "12", Commencing: "30th November", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "13", Commencing: "7th December", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "14", Commencing: "14th December", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "", Week: "", Commencing: "21st December", Monday: "Xmas Break", Tuesday: ""},
+			{Term: "", Week: "", Commencing: "28th December", Monday: "Xmas Break", Tuesday: ""},
+			{Term: " ", Week: " ", Commencing: " ", Monday: " ", Tuesday: " "},
+
+			{Term: " ", Week: " ", Commencing: " ", Monday: " ", Tuesday: " "},
+			{Term: "", Week: "15", Commencing: "4th January", Monday: "A", Tuesday: "B"},
+            {Term: "", Week: "16", Commencing: "11th January", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "17", Commencing: "19th January", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "18", Commencing: "26th January", Monday: "B", Tuesday: "A"},
+            {Term: "", Week: "19", Commencing: "1st Febuary", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "20", Commencing: "8th Febuary", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Spring", Week: "", Commencing: "15th Febuary", Monday: "Half term", Tuesday: ""},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "", Week: "21", Commencing: "22nd Febuary", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "23", Commencing: "1st March", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "24", Commencing: "8th March", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "25", Commencing: "15th March", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "25", Commencing: "22nd March", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "", Week: "", Commencing: "29th March", Monday: "Easter Break", Tuesday: ""},
+			{Term: "", Week: "", Commencing: "5th April", Monday: "Easter Break", Tuesday: ""},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+
+			{Term: " ", Week: " ", Commencing: " ", Monday: " ", Tuesday: " "},
+            {Term: "", Week: "26", Commencing: "12th April", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "27", Commencing: "19th April", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "28", Commencing: "26th April", Monday: "B", Tuesday: "A"},
+            {Term: "", Week: "29", Commencing: "3rd May (bank holiday)", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "30", Commencing: "10th May", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "31", Commencing: "17th May", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "32", Commencing: "24th May", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Summer", Week: "", Commencing: "", Monday: "Half term", Tuesday: ""},
+			{Term: "", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "", Week: "33", Commencing: "7th June", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "34", Commencing: "14th June", Monday: "B", Tuesday: "A"},
+			{Term: "", Week: "35", Commencing: "21st June", Monday: "A", Tuesday: "B"},
+			{Term: "", Week: "36", Commencing: "28th June", Monday: "Review"},
+            {term: "TEST", Week: "TEST", Commencing: "Oct 19", Monday: "Review"}
+        ];
+
+        function generateTableHead(table, data) {
+            let thead = table.createTHead();
+            let row = thead.insertRow();
+            for (let key of data) {
+                let th = document.createElement("th");
+                let text = document.createTextNode(key);
+                th.appendChild(text);
+                row.appendChild(th);
+            }
+        }
+
+        function generateTable(table, data) {
+            for (let element of data) {
+                let row = table.insertRow();
+                for (key in element) {
+                    let cell = row.insertCell();
+                    let text = document.createTextNode(element[key]);
+                    cell.appendChild(text);
+                }
+            }
+        }
+
+        let table = document.querySelector("table");
+        let data = Object.keys(tanks[0]);
+        generateTableHead(table, data);
+        generateTable(table, tanks);
+
+
+
+        
+        var d = new Date();
+        d.setDate(d.getDate() + (1 + 7 - d.getDay()) % 7);
+        var stringDate = String(d)
+        console.log(stringDate.slice(4, 10))
+        
+    </script>
+</html>
