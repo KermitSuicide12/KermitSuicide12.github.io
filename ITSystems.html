@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="CSS/ITSystems.css">
+	<script src="Scripts/Table.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Cloud Computing & Mobile App Development</h1>
+    </div>
+
+    <div class="topnav">
+		<a href="Main.html">Home</a>
+        <a href="Calender.html">Calender</a>
+        <a href="ITSystems.html">IT Systems</a>
+    </div>
+	
+	 <div class="row">
+        <div class="leftcolumn">
+			
+            <div class="card">
+                <h1 style="text-align:center">Glossary</h1>
+				<input type="text" id="tableInput" onkeyup="tableFilter()" placeholder="Search Glossary" title="Type in a name">
+    			<table id="tanks"></table>
+            </div>
+        </div>
+		
+        <div class="rightcolumn">
+
+            <div class="card">
+
+                <h1 style="text-align:center">PC Component Description</h1>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Power Supplies​</h3>
+
+                <div class="I1">
+                    
+                    <h6>Computers use a power supply to convert AC power into a lower voltage DC power required by internal components.​</h6>
+
+                    <h6>Desktop computer power supply form factors include:​</h6>
+
+                </div>
+                    
+                <div class="I2">
+                    <h6>Advanced Technology (AT) – original power supply for legacy computer systems​</h6>
+
+                    <h6>AT Extended (ATX) – updated version of the AT​</h6>
+
+                    <h6>ATX12V – the most common power supply on the market today​</h6>
+
+                    <h6>EPS12V – originally designed for network servers but is now commonly used in high-end desktop models.​</h6>
+                </div>
+
+                <div class="I1">
+                    <h6>A power supply includes several different connectors. They are used to power various internal components such as the motherboard and disk drives.​</h6>
+
+                    <h6>Some examples are:​</h6>
+                </div>
+
+                <div class="I2">
+
+                    <h6>20-pin or 24-pin slotted connector​</h6>
+
+                    <h6>SATA keyed connector​</h6>
+
+                    <h6>Molex keyed connector​</h6>
+
+                    <h6>Berg keyed connector​</h6>
+
+                    <h6>4-pin to 8-pin auxiliary power connector​</h6>
+
+                    <h6>6/8-pin PCIe power connector​</h6>
+
+                </div>
+            </div>
+        </div>
+	</div>
+	
+    <script>
+        function tableFilter() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("tableInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tanks");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+
+        let tanks = [
+            {Term: "AIO", Defintion: "All in one - device that is multifunctional. Also known as MFDs"},
+            {Term: "MFD", Defintion: "Multifunctional device which connects to the internet or a printer which also scans and photcopies, also known as AIOs"},
+            {Term: "Standalone", Defintion: "A computer which is not relient on any other device to function"},
+            {Term: "DAB", Defintion: "Digital audio broadcast, which converts audio broadcasts to digital signal to reduce interference"},
+            {Term: "SLR camera", Defintion: "Sing lens reflex - use a lens that captures the scope of the image that you actually see"},
+            {Term: "GPS", Defintion: "Global positioning system - uses satellite signals to work out your location"},
+            {Term: "Broadband", Defintion: "High speed transmission method for messages and most commonly the internet"},
+            {Term: "Hardware", Defintion: "All of the electronic and mechanical equiptment in a network, e.g. motherboard"},
+            {Term: "Software", Defintion: "Computer programs that preform a task(s) e.g. operating system"},
+            {Term: "System Unit", Defintion: "The main container for system devices. It protects the delicate electronic and mechanical devices from damage"},
+            {Term: "Peripherals", Defintion: "Devices that connect to the system unit using cables or wireless technologies e.g. mouse"},
+            {Term: "Processor", Defintion: "Integrated circuit - supplied on a single silicon chip. It’s function is to control all the computers functions"},
+            {Term: "Processor speed", Defintion: "Measured in megahertz (MHz) or Gigahertz (GHz) - the speed of the system clock within the processor and it controls how fast instructions are executed"},
+            {Term: "RAM", Defintion: "Ranom Access Memory -  super-fast and temporary data storage space that a computer needs to access right now or in the next few moments."},
+            {Term: "DIMM", Defintion: "Dual inline memory module - for desktop computers"},
+            {Term: "SODIMM", Defintion: "Small outline dual inline memory module - for notebook computers"},
+            {Term: "Motherboard", Defintion: "The main circuit board for the computer system. All device in the computer system will either be part of the motherboard or connected to it"},
+            {Term: "Buses", Defintion: "A path through which data can be sent to the different parts of the computer system"},
+            {Term: "Power Supply", Defintion: "Provides the 240 Volts needed for the computer to run"},
+            {Term: "Ports", Defintion: "Interfaces between peripheral devices and the computer"},
+            {Term: "Graphic card", Defintion: "Processses image/pixel data in place of the CPU"},
+            {Term: "Network card", Defintion: "allows computers join a network. Can be wired or wireless"},
+            {Term: "IDE", Defintion: "Integrated Drive Electronics - The disks connect to the motherboard using a ribbon cable"},
+            {Term: "SATA", Defintion: "Serial Advanced Technology Attachment - allow faster data transfer speeds than IDE"},
+            {Term: "Aspect Ratio", Defintion: "The ratio between the width and height of the screen"},
+            {Term: "ROM", Defintion: "Read Only Memory - Permenant data that the computer needs to access only on startup"},
+            {Term: "Driver", Defintion: "Routine program used to operate a peripheral device"},
+            {Term: "ESD", Defintion: "Electrostatic discharge - an occur when there is a buildup of an electric charge that exists on a surface which comes into contact with another differently charged surface"},
+            {Term: "Northbridge", Defintion: "The section of a chipset that Controls high speed access to the RAM and video card"},
+            {Term: "Southbridge", Defintion: "Allows the CPU to communicate with slower speed devices including hard drives, Universal Serial Bus (USB) ports, and expansion slots.​"},
+            {Term: "L1 cache", Defintion: "Integrated into the CPU​"},
+            {Term: "L2 cache", Defintion: "Originaly mounted on the motherboard, but now integrated into the CPU​"},
+            {Term: "L3 cache", Defintion: "Used some high-end workstations and server CPUs"},
+
+        ];
+
+        function generateTableHead(table, data) {
+            let thead = table.createTHead();
+            let row = thead.insertRow();
+            for (let key of data) {
+                let th = document.createElement("th");
+                let text = document.createTextNode(key);
+                th.appendChild(text);
+                row.appendChild(th);
+            }
+        }
+
+        function generateTable(table, data) {
+            for (let element of data) {
+                let row = table.insertRow();
+                for (key in element) {
+                    let cell = row.insertCell();
+                    let text = document.createTextNode(element[key]);
+                    cell.appendChild(text);
+                }
+            }
+        }
+
+        let table = document.querySelector("table");
+        let data = Object.keys(tanks[0]);
+        generateTableHead(table, data);
+        generateTable(table, tanks);
+    </script>
+</html>
