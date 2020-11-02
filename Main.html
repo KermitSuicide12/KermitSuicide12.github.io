@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="CSS/Main.css">
+	<script src="Scripts/Table.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Cloud Computing & Mobile App Development</h1>
+    </div>
+
+    <div class="topnav">
+		<a href="Main.html">Home</a>
+		<a href="Calender.html">Calender</a>
+		<a href="ITSystems.html">IT Systems</a>
+    </div>
+	
+	 <div class="row">
+        <div class="leftcolumn">
+			<div class="card">
+                
+                <h1 style="text-align:center">Next weeks Time Table</h1>
+                <table id="tanks">
+
+                    <tr>
+                        <th>Term</th>
+                        <th>Week</th>
+                        <th>Commencing</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+		
+        <div class="rightcolumn">
+            <div class="card">
+                
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let tanks = [
+            {Term: "Autumn", Week: 0, Commencing: "Sep 7", Monday: "", Tuesday: ""},
+            {Term: "Autumn", Week: 1, Commencing: "Sep 14", Monday: "", Tuesday: ""},
+			{Term: "Autumn", Week: 2, Commencing: "Sep 21", Monday: "", Tuesday: ""},
+			{Term: "Autumn", Week: 3, Commencing: "Sep 28", Monday: "", Tuesday: ""},
+            {Term: "Autumn", Week: 4, Commencing: "Oct 5", Monday: "", Tuesday: ""},
+			{Term: "Autumn", Week: 5, Commencing: "Oct 12", Monday: "", Tuesday: ""},
+			{Term: "Autumn", Week: 6, Commencing: "Oct 19", Monday: "A", Tuesday: "B"},
+			{Term: "Autumn", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Autumn", Week: "", Commencing: "Oct 26", Monday: "Half term", Tuesday: ""},
+			{Term: "Autumn", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Autumn", Week: 7, Commencing: "Nov 2", Monday: "B", Tuesday: "A"},
+            {Term: "Autumn", Week: 8, Commencing: "Nov 9", Monday: "A", Tuesday: "B"},
+			{Term: "Autumn", Week: 9, Commencing: "Nov 16", Monday: "B", Tuesday: "A"},
+			{Term: "Autumn", Week: 10, Commencing: "Nov 23", Monday: "A", Tuesday: "B"},
+            {Term: "Autumn", Week: 11, Commencing: "Nov 30", Monday: "B", Tuesday: "A"},
+			{Term: "Autumn", Week: 12, Commencing: "Dec 7", Monday: "A", Tuesday: "B"},
+			{Term: "Autumn", Week: 13, Commencing: "Dec 14", Monday: "B", Tuesday: "A"},
+			{Term: "Autumn", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Autumn", Week: "", Commencing: "Dec 21", Monday: "Xmas Break", Tuesday: ""},
+			{Term: "Autumn", Week: "", Commencing: "Dec 28", Monday: "Xmas Break", Tuesday: ""},
+			{Term: "Autumn", Week: " ", Commencing: " ", Monday: " ", Tuesday: " "},
+
+			{Term: "Spring", Week: " ", Commencing: " ", Monday: " ", Tuesday: " "},
+			{Term: "Spring", Week: 14, Commencing: "Jan 4", Monday: "A", Tuesday: "B"},
+            {Term: "Spring", Week: 15, Commencing: "Jan 11", Monday: "B", Tuesday: "A"},
+			{Term: "Spring", Week: 16, Commencing: "Jan 19", Monday: "A", Tuesday: "B"},
+			{Term: "Spring", Week: 17, Commencing: "Jan 26", Monday: "B", Tuesday: "A"},
+            {Term: "Spring", Week: 18, Commencing: "Feb 1", Monday: "A", Tuesday: "B"},
+			{Term: "Spring", Week: 19, Commencing: "Feb 8", Monday: "B", Tuesday: "A"},
+			{Term: "Spring", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Spring", Week: "", Commencing: "Feb 15", Monday: "Half term", Tuesday: ""},
+			{Term: "Spring", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Spring", Week: 20, Commencing: "Feb 22", Monday: "A", Tuesday: "B"},
+			{Term: "Spring", Week: 21, Commencing: "Mar 1", Monday: "B", Tuesday: "A"},
+			{Term: "Spring", Week: 22, Commencing: "Mar 8", Monday: "A", Tuesday: "B"},
+			{Term: "Spring", Week: 23, Commencing: "Mar 15", Monday: "B", Tuesday: "A"},
+			{Term: "Spring", Week: 24, Commencing: "Mar 22", Monday: "A", Tuesday: "B"},
+			{Term: "Spring", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Spring", Week: "", Commencing: "Mar 29", Monday: "Easter Break", Tuesday: ""},
+			{Term: "Spring", Week: "", Commencing: "Apr 5", Monday: "Easter Break", Tuesday: ""},
+			{Term: "Spring", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+
+			{Term: "Summer", Week: " ", Commencing: " ", Monday: " ", Tuesday: " "},
+            {Term: "Summer", Week: 25, Commencing: "Apr 12", Monday: "B", Tuesday: "A"},
+			{Term: "Summer", Week: 26, Commencing: "Apr 19", Monday: "A", Tuesday: "B"},
+			{Term: "Summer", Week: 27, Commencing: "Apr 26", Monday: "B", Tuesday: "A"},
+            {Term: "Summer", Week: 28, Commencing: "May 3 (bank holiday)", Monday: "A", Tuesday: "B"},
+			{Term: "Summer", Week: 29, Commencing: "May 10", Monday: "B", Tuesday: "A"},
+			{Term: "Summer", Week: 30, Commencing: "May 17", Monday: "A", Tuesday: "B"},
+			{Term: "Summer", Week: 31, Commencing: "May 24", Monday: "B", Tuesday: "A"},
+			{Term: "Summer", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Summer", Week: "", Commencing: "", Monday: "Half term", Tuesday: ""},
+			{Term: "Summer", Week: "", Commencing: "", Monday: "", Tuesday: ""},
+			{Term: "Summer", Week: 32, Commencing: "Jun 7", Monday: "A", Tuesday: "B"},
+			{Term: "Summer", Week: 33, Commencing: "Jun 14", Monday: "B", Tuesday: "A"},
+			{Term: "Summer", Week: 34, Commencing: "Jun 21", Monday: "A", Tuesday: "B"},
+			{Term: "Summer", Week: 35, Commencing: "Jun 28", Monday: "Review"},
+        ];
+
+        var d = new Date();
+
+        d.setDate(d.getDate() + (1 + 7 - d.getDay()) % 7);
+
+        var stringDate = String(d)
+        var main = stringDate.slice(4, 10)
+        var out = main.replace("0", "")
+
+
+        function generateTable(table, data) {
+            for (let element of data) {
+                let row = table.insertRow();
+
+                if(element.Commencing == out){
+                    for (key in element) {
+                        let cell = row.insertCell();
+                        let text = document.createTextNode(element[key]);
+                        cell.appendChild(text);
+                    }
+                }
+            }
+        }
+
+        let table = document.querySelector("table");
+        generateTable(table, tanks);
+
+    </script>
+</html>
